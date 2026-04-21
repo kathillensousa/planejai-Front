@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 80px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+
+    
+    border-right: 3px solid #000000;
+}
+
+/* config logo */
+
+.logo {
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 5px 0; 
+    margin-right: 10px;
+}
+
+.logo img{
+    width: 70px;
+    margin: 0;
+    border-color: white;
+}
+
+.logo:hover  {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.logo span {
+    position: absolute;
+    left: 110%;        
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #fff;
+    background: #333;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.logo:hover span {
+    opacity: 1;
+    left: 120%; 
+}
+
+
+/* configurações do botão */
+.btn img {
+    width: 38px;
+    border-color: white;
+}
+
+.btn:hover img {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.btn {
+    display: block;
+    position: relative;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 68px 0; 
+    margin-right: 40px;
+
+}
+
+
+.btn span {
+    position: absolute;
+    left: 110%;        
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #fff;
+    background: #333;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+/* aparece no hover */
+.btn:hover span {
+    opacity: 1;
+    left: 120%; 
+}
+
+.azulVerde {
+    width: 150px;
+    padding-top: 0px;
+}
+
+.azulVerdeBaixo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 150px;
+}

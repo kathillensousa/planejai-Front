@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+}
+
+.azulVerde {
+    width: 150px;
+    padding-top: 0px;
+}
+
+.azulVerdeBaixo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 150px;
+}
+
+.title {
+    background-color: rgba(120, 120, 235, 0.521);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+
+    padding: 20px;
+    height: 20px;
+
+    font-size: 25px;
+    
+}

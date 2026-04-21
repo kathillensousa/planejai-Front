@@ -1,16 +1,7 @@
-import { useState } from 'react'
-
-import {AppLayout} from './pages/AppLayout'
+import { AppRoutes } from "./Routes";
 
 function App() {
-
-  return (
-    <>
-    <AppLayout title={'PlanejAI - Jovem!'}>
-      <h2>Aplicação para facilitar o controle financeiro</h2>
-    </AppLayout>
-    </>
-  )
+  return <AppRoutes />;
 }
 
-export default App
+export default App;
