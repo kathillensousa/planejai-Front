@@ -21,6 +21,13 @@ export const AppLayout = ({children }: IAppLayoutProps) => {
                     <nav>
                         <ul>
                             <NavLink 
+                                to='/perfil'
+                                className={`${AppLayoutStyles.btn} ${AppLayoutStyles.btnPerfil}`}
+                                >
+                                    <img src="/icons/perfil-user.svg" alt="icon"/>
+                                    <span>Perfil de usuário</span>
+                            </NavLink>
+                            <NavLink 
                                 to='/'
                                 className={`${AppLayoutStyles.btn} ${AppLayoutStyles.btnGeral}`}
                                 >

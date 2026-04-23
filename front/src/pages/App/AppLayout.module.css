@@ -100,6 +100,7 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.2s;
+    z-index:5
 }
 
 /* aparece no hover */

@@ -6,6 +6,7 @@ import { VisaoGeral } from "./pages/Geral/Geral";
 import { CapitalLayout } from "./pages/Capital/CapitalLayout"
 import { GastosLayout } from "./pages/Gastos/GastosLayout"
 import { DividasLayout } from "./pages/Dividas/DividasLayout";
+import { PerfilUser } from "./pages/Perfil/PerfilLayout";
 
 export const AppRoutes = () => {
 
@@ -13,14 +14,6 @@ export const AppRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route 
-                    path="/"
-                    element={
-                        <AppLayout>
-                            <VisaoGeral/>
-                            </AppLayout>
-                        }
-                />
 
                 <Route 
                     path="/planejai"
@@ -30,6 +23,25 @@ export const AppRoutes = () => {
                             </AppLayout>
                         }
                 />
+
+                <Route 
+                    path="/perfil"
+                    element={
+                        <AppLayout>
+                            <PerfilUser/>
+                        </AppLayout>
+                    }
+                />
+                <Route 
+                    path="/"
+                    element={
+                        <AppLayout>
+                            <VisaoGeral/>
+                            </AppLayout>
+                        }
+                />
+
+                
 
                 <Route 
                     path="/capital"
