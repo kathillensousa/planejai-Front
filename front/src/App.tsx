@@ -8,12 +8,19 @@ import { DividasLayout } from "./pages/Dividas/DividasLayout";
 import { PerfilUser } from "./pages/Perfil/PerfilLayout";
 import { HomePage } from "./pages/Home/Home";
 import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
+import { LoginPage } from "./pages/Login/Login";
 
 function App () {
 
     return (
             <BrowserRouter>
             <Routes>
+                <Route 
+                path="/login"
+                element={
+                    <LoginPage />
+                }
+                />
                 <Route element={<LayoutDefault />}>
                     <Route 
                         path="/"
