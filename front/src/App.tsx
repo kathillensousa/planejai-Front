@@ -9,12 +9,28 @@ import { PerfilUser } from "./pages/Perfil/PerfilLayout";
 import { HomePage } from "./pages/Home/Home";
 import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
 import { LoginPage } from "./pages/Login/Login";
+import { LoaderScreen } from "./pages/LoaderScreen";
 
 function App () {
 
     return (
             <BrowserRouter>
             <Routes>
+
+                <Route 
+                path="*"
+                element={
+                    <LoaderScreen/>
+                }
+                />
+                
+                <Route 
+                    path="/"
+                    element={
+                        <LoaderScreen/>
+                        }
+                />
+
                 <Route 
                 path="/login"
                 element={
@@ -70,13 +86,7 @@ function App () {
                         handle={{title:"Controle de Divídas"}}
                     />
 
-                    <Route 
-                        path="*"
-                        element={
-                            <HomePage />
-                        }
-                        handle={{title:"Página inicial - Visão Geral das finanças "}}
-                    />
+                    
                 </Route>
             </Routes>
         </BrowserRouter>
