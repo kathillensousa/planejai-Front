@@ -41,18 +41,7 @@
 
   --color-transparent-500: none;
   --color-transparent-400: #F5F5F5;
-  --color-transparent-300: #E3E3E3;
-
-
-extend:{
-  textShadow: {
-    sm: '1px 1px 2px rgba(0,0,0,0.3)',
-    md: '2px 2px 4px rgba(0,0,0,0.5)',
-    lg: '3px 3px 6px rgba(0,0,0,0.8)',
-  }
-}
-  
-    
+  --color-transparent-300: #E3E3E3;    
   
 
   --font-Inter: Inter;

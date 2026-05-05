@@ -2,6 +2,9 @@ import { use, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../hooks/useAuth"
 
+import ZupOlhoAberto from "../../assets/ZUP/ZupOlhoAberto.png"
+import ZupOlhoFechado from "../../assets/ZUP/ZupOlhoAberto.png"
+
 
 
 
@@ -44,15 +47,15 @@ export const LoginPage = () => {
 
     return (
         <>
-            <div className="h-screen w-screen flex items-center justify-center bg-[var(--color-transparent-300)]">
+            <div className="h-screen w-screen flex items-center justify-center bg-[var(--color-gray-200)]">
 
                 
 
-                <div className="w-90 h-130 items-center bg-[var(--color-transparent-400)] border border-[var(--color-gray-150)]  rounded-3xl shadow-2xl">
+                <div className="w-80 h-100 items-center bg-[var(--color-gray-150)] border border-[var(--color-gray-150)]  rounded-3xl shadow-2xl">
                     <h1 className="font-bold text-[30px] flex justify-center">LOGIN</h1>
                 <div>
                     <h1 className="font-bold text-[20px] flex ml-5 mt-10 [text-shadow:3px_3px_6px_rgba(0,0,0,0.3)]">EMAIL</h1>
-                    <input className="w-60 h-10 bg-[var(--color-transparent-400)] ml-10 border border-2 rounded-md shadow-2xl"
+                    <input className="w-50 h-10 bg-[var(--color-gray-200)] ml-5 border rounded-r-2xl  rounded-b-2xl shadow-2xl "
                     value={email}
                     type="text"
                     placeholder="Digite seu e-mail"
@@ -62,8 +65,8 @@ export const LoginPage = () => {
                     
                     <div className="relative">
 
-                    <h1 className="font-black text-[20px] tracking-wide ml-5 mt-10">SENHA</h1>
-                    <input className="w-60 h-10 bg-[var(--color-transparent-400)] ml-10 border border-2 rounded-md shadow-2xl"
+                    <h1 className="font-bold text-[20px] flex ml-5 mt-10 [text-shadow:3px_3px_6px_rgba(0,0,0,0.3)]">SENHA</h1>
+                    <input  className="w-50 h-10 bg-[var(--color-gray-200)] ml-5 border rounded-r-2xl  rounded-b-2xl shadow-2xl "
                     value={password}
                     type={showPassword ? "text" : "password"}
                     placeholder="Digite sua senha"
@@ -75,7 +78,11 @@ export const LoginPage = () => {
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-2 top-1/2 -translate-y-1/2"
                         >
-                        {showPassword ? "🙈" : "👁️"}
+                        {showPassword ? (
+                            <img src={ZupOlhoAberto} alt="Esconder senha" className="size-"/>
+                        ) : (
+                            <img src={ZupOlhoFechado} alt="mostrar senha"/>  
+                        )}
                     </button>
                     
 
