@@ -1,6 +1,5 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "../integrations/supabase/client";
-
 
 interface IAuthcontextProps { // definindo o formato do contexto e tudo que o app pode acessar
     email:string | undefined;
@@ -37,7 +36,7 @@ export const AuthProvider = ({children}: React.PropsWithChildren) => {
 
     useEffect(() => {  // executa uma vez
         const {data: listener} = supabase.auth.onAuthStateChange( // escuta as mudanças de autenticção : "upa, me avisa sempre que o estado de login mudar"
-            (event, session) =>{  // callback roda sempre que algo muda, login user accessToken, sempre que mudar, ele roda o event(tipo de mudança) seesion(dados de usuário)
+            (event: string, session: any) =>{  // callback roda sempre que algo muda, login user accessToken, sempre que mudar, ele roda o event(tipo de mudança) seesion(dados de usuário)
                 //console.log("Auth change:", event); log para degub, ele mostra oque mudou no auth
 
                 if(session){  // se existe seção, usuário logado e salva essas informações do usuario para manter as informações dele salvas msmo depois do refresh
