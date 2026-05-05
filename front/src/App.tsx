@@ -1,6 +1,9 @@
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 
+import { LoginPage } from "./pages/Login/Login";
 
+//rotas privadas
+import { PrivateRoute } from "./components/Authentication/PrivatesRoutes";
 import { PlanejAI } from "./pages/PlanejAI/PlanejAI";
 import { CapitalLayout } from "./pages/Capital/CapitalLayout"
 import { GastosLayout } from "./pages/Gastos/GastosLayout"
@@ -8,7 +11,6 @@ import { DividasLayout } from "./pages/Dividas/DividasLayout";
 import { PerfilUser } from "./pages/Perfil/PerfilLayout";
 import { HomePage } from "./pages/Home/Home";
 import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
-import { LoginPage } from "./pages/Login/Login";
 import { LoaderScreen } from "./pages/LoaderScreen";
 
 function App () {
@@ -23,13 +25,6 @@ function App () {
                     <LoaderScreen/>
                 }
                 />
-                
-                <Route 
-                    path="/"
-                    element={
-                        <LoaderScreen/>
-                        }
-                />
 
                 <Route 
                 path="/login"
@@ -37,9 +32,12 @@ function App () {
                     <LoginPage />
                 }
                 />
+
+                
+                <Route element={<PrivateRoute/>}> 
                 <Route element={<LayoutDefault />}>
                     <Route 
-                        path="/"
+                        path="/home"
                         element={
                             <HomePage/>
                             }
@@ -88,6 +86,9 @@ function App () {
 
                     
                 </Route>
+                </Route>
+                
+                
             </Routes>
         </BrowserRouter>
         

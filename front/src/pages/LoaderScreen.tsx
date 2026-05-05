@@ -20,7 +20,7 @@ export const LoaderScreen = () => {
                 />
 
                     <NavLink
-                    to="login"
+                    to="/login"
                     className="absolute left-1/2 -translate-x-1/2 -bottom-20 w-38 h-10  flex items-center justify-center bg-[var(--color-success-430)] border  border-transparent rounded-xl font-black text-[var(--color-black-300)] shadow-2xl bg-blend-soft-light"
                     >
                         Entrar

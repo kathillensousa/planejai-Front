@@ -1,37 +1,39 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { useAuthContext } from "../../contexts/AuthContext"
+import { useAuth } from "../../hooks/useAuth"
 
 
 
 
 export const LoginPage = () => {
 
-
-    const login = useAuthContext()
+    const {login} = useAuth() // use auth retorna um objeto
+    
     const [email, setEmail] = useState<string>("")
     
 
     const [password, setPassword] = useState<string>("")
     const [showPassword, setShowPassword] = useState(false);
 
-
-    const [accessToken, setAccessToken] = useState<string | undefined> (
-        localStorage.getItem("accessToken") || undefined
-    )
     const navigate = useNavigate();
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
+        if(!email || !password){
+            alert("Email ou senha estao incorretos");
+            return;
+        };
 
-        if (!email || !password) {
-            alert("Preencha email e senha"); // nao deixa passar enquanto email e sebnha nao foram preenchidos
-        return;
-    }
+        const error = await login(email,password)// aguarda a autenticação
 
-        login(email,password)  // o login vai gerar um token de acesso pra liberar entrar no home
-        
+        console.log("erro login:", error);
+
+        if (error) {
+            console.error(error);
+            return error;
+        }   
         navigate('/home')
-    }
+    };
+
     return (
         <>
             <div className="h-screen w-screen grid place-items-center bg-[var(--color-transparent-300)]">
