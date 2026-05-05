@@ -42,7 +42,7 @@ export const SideBar = ({children}: PropsWithChildren) => {
                     </li>
                     <li>
                         <NavLink 
-                            to='/'
+                            to='/home'
                             className="group flex items-center gap-2 "
                             >
                                 <img src={visaoGeralIcon} alt="icon"

@@ -1,17 +1,20 @@
 import { NavLink } from "react-router-dom";
-import gif from "../assets/init_young_man.gif";
+//import gif from "../assets/init_young_man.gif";
 
 export const LoaderScreen = () => {
+/*
+<img 
+                    src={gif} 
+                    alt="gif"  
+                    className="w-72"
+                />
+ */
     return (
         <div className="bg-[var(--color-gray-100)] h-screen w-screen flex items-center justify-center">
 
             <div className="relative flex items-center justify-center">
 
-                <img 
-                    src={gif} 
-                    alt="gif"  
-                    className="w-72"
-                />
+                
 
                 <img 
                     src="/logo_planejAI.png" 

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { use, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../hooks/useAuth"
 
@@ -7,8 +7,9 @@ import { useAuth } from "../../hooks/useAuth"
 
 export const LoginPage = () => {
 
-    const {login} = useAuth() // use auth retorna um objeto
-    
+    const {login, accessToken} = useAuth() // use auth retorna um objeto
+
+
     const [email, setEmail] = useState<string>("")
     
 
@@ -16,6 +17,7 @@ export const LoginPage = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
+
 
     const handleLogin = async () => {
         if(!email || !password){
@@ -31,20 +33,26 @@ export const LoginPage = () => {
             console.error(error);
             return error;
         }   
-        navigate('/home')
+        //navigate('/home') // força a navegação antes do estado global atualizar, faaz retornar o acesso do usuario como false, e o private route roda com o valor antigo
     };
+
+    useEffect(() =>{
+        if(accessToken){
+            navigate('/home');
+        };
+    }, [accessToken])
 
     return (
         <>
-            <div className="h-screen w-screen grid place-items-center bg-[var(--color-transparent-300)]">
+            <div className="h-screen w-screen flex items-center justify-center bg-[var(--color-transparent-300)]">
 
-                <h1 className="font-black text-[30px] tracking-wide mb-2">LOGIN</h1>
+                
 
-                <div className="w-150 h-150 bg-[var(--color-transparent-400)]border border-5 border-[var(--color-success-500)]  rounded-xl shadow-2xl">
-
+                <div className="w-90 h-130 items-center bg-[var(--color-transparent-400)] border border-[var(--color-gray-150)]  rounded-3xl shadow-2xl">
+                    <h1 className="font-bold text-[30px] flex justify-center">LOGIN</h1>
                 <div>
-                    <h1 className="font-black text-[20px] tracking-wide ml-10 mt-25">EMAIL</h1>
-                    <input className="w-100 h-14 bg-[var(--color-transparent-400)] ml-10 border border-2 rounded-md shadow-2xl"
+                    <h1 className="font-bold text-[20px] flex ml-5 mt-10 [text-shadow:3px_3px_6px_rgba(0,0,0,0.3)]">EMAIL</h1>
+                    <input className="w-60 h-10 bg-[var(--color-transparent-400)] ml-10 border border-2 rounded-md shadow-2xl"
                     value={email}
                     type="text"
                     placeholder="Digite seu e-mail"
@@ -54,8 +62,8 @@ export const LoginPage = () => {
                     
                     <div className="relative">
 
-                    <h1 className="font-black text-[20px] tracking-wide ml-10 mt-25">SENHA</h1>
-                    <input className="w-100 h-14 bg-[var(--color-transparent-400)] ml-10 border border-2 rounded-md shadow-2xl"
+                    <h1 className="font-black text-[20px] tracking-wide ml-5 mt-10">SENHA</h1>
+                    <input className="w-60 h-10 bg-[var(--color-transparent-400)] ml-10 border border-2 rounded-md shadow-2xl"
                     value={password}
                     type={showPassword ? "text" : "password"}
                     placeholder="Digite sua senha"

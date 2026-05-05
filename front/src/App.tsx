@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { LoginPage } from "./pages/Login/Login";
 
 //rotas privadas
-import { PrivateRoute } from "./components/Authentication/PrivatesRoutes";
+import { PrivateRoute } from "./Authentication/PrivatesRoutes";
 import { PlanejAI } from "./pages/PlanejAI/PlanejAI";
 import { CapitalLayout } from "./pages/Capital/CapitalLayout"
 import { GastosLayout } from "./pages/Gastos/GastosLayout"
