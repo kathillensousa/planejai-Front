@@ -1,32 +1,26 @@
 import { NavLink } from "react-router-dom";
-//import gif from "../assets/init_young_man.gif";
 
+import logo from "../assets/Logo_planejAI.png";
+import Zup from "../assets/ZUP/Zup.gif"
 export const LoaderScreen = () => {
-/*
-<img 
-                    src={gif} 
-                    alt="gif"  
-                    className="w-72"
-                />
- */
+
     return (
-        <div className="bg-[var(--color-gray-100)] h-screen w-screen flex items-center justify-center">
-
+        <div className="bg-[var(--color-black-1)] h-screen w-screen flex items-center justify-center z-0">
+            
             <div className="relative flex items-center justify-center">
+                <img src={logo} alt="logo" className="absolute bottom-85 left-50 w-35 md:w-38 lg:w-42 h-auto z-3 "/>
 
-                
-
-                <img 
-                    src="/logo_planejAI.png" 
-                    alt="icon"
-                    className="w-60 absolute -right-40 -top-40 "
+                <img
+                src={Zup} alt='gif'
+                className=" w-70 h-100 flex z-0 rounded-xl"
                 />
+                
 
                     <NavLink
                     to="/login"
-                    className="absolute left-1/2 -translate-x-1/2 -bottom-20 w-38 h-10  flex items-center justify-center bg-[var(--color-success-430)] border  border-transparent rounded-xl font-black text-[var(--color-black-300)] shadow-2xl bg-blend-soft-light"
+                    className="absolute left-1/2 -translate-x-1/2 -bottom-15 w-50 py-3 px-4 text-sm  flex items-center justify-center  font-bold bg-[var(--color-success-420)] cursor-pointer rounded-xl shadow-2xl z-5 text-center leading-none"
                     >
-                        Entrar
+                    QUERO CONHECER
                     </NavLink>
                 
 

@@ -12,6 +12,8 @@ import { PerfilUser } from "./pages/Perfil/PerfilLayout";
 import { HomePage } from "./pages/Home/Home";
 import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
 import { LoaderScreen } from "./pages/LoaderScreen";
+import { CreateAccount } from "./pages/Register/RegistrationForm";
+import ModalBody from "./components/modal/ModalBody";
 
 function App () {
 
@@ -31,6 +33,17 @@ function App () {
                 element={
                     <LoginPage />
                 }
+                />
+                <Route 
+                path="/modal"
+                element={
+                    <ModalBody />
+                }
+                />
+
+                <Route
+                path="/createaccount"
+                element={<CreateAccount/>}
                 />
 
                 
