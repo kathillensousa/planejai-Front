@@ -9,9 +9,10 @@ import ZupSentado from "../../assets/ZUP/ZupSentado.png"
 import azulVerde from "../../assets/background-icons/azulVerde.png"
 import azulVerdeBaixo from "../../assets/background-icons/azulVerdeBaixo.png"
 import logo from "../../assets/Logo_planejAI.png";
+import { ModalErrorLogin } from "../../components/modal/ModalErrorLogin"
 
 export const LoginPage = () => {
- 
+
     const {login, accessToken} = useAuth() // use auth retorna um objeto
 
 
@@ -23,10 +24,11 @@ export const LoginPage = () => {
 
     const navigate = useNavigate();
 
+    const [showErrorModal, setShowErrorModal] = useState(false);
 
     const handleLogin = async () => {
         if(!email || !password){
-            alert("Email ou senha estao incorretos");
+            setShowErrorModal(true)
             return;
         };
 
@@ -36,6 +38,7 @@ export const LoginPage = () => {
 
         if (error) {
             console.error(error);
+            setShowErrorModal(true);
             return error;
         }   
         //navigate('/home') // força a navegação antes do estado global atualizar, faaz retornar o acesso do usuario como false, e o private route roda com o valor antigo
@@ -120,6 +123,11 @@ export const LoginPage = () => {
                 </div>
 
             </div>
+            {showErrorModal && (
+            <ModalErrorLogin
+            onClose={() => setShowErrorModal(false)} />
+            )}
+
         </div>
     )
 }

@@ -14,6 +14,7 @@ import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
 import { LoaderScreen } from "./pages/LoaderScreen";
 import { CreateAccount } from "./pages/Register/RegistrationForm";
 import ModalBody from "./components/modal/ModalBody";
+import { ModalErrorLogin } from "./components/modal/ModalErrorLogin";
 
 function App () {
 
@@ -37,7 +38,7 @@ function App () {
                 <Route 
                 path="/modal"
                 element={
-                    <ModalBody />
+                    <ModalErrorLogin />
                 }
                 />
 

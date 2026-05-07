@@ -11,13 +11,10 @@ function ModalBody(props: any) {
                     {/*content*/}
                     <div className="w-85 h-100 overflow-y-scroll border-0 rounded-lg shadow-lg relative flex flex-col bg-[var(--color-gray-150)] outline-none focus:outline-none ps-3" style={{ zIndex: 400 }}>
                         {/*header*/}
-                        <div className="relatibe justify-end p-1 mt-1">
                             <button  onClick={() => props.closeModal(false)}>
-                                <img src={seta} className=" absolute h-10 w-10" />
+                                <img src={seta} className=" absolute h-10 w-10 mt-2" />
                             </button>
-                        </div>
                         {props.children}
-                        <InputDate/>
                     </div>
                 </div>
             </div>
