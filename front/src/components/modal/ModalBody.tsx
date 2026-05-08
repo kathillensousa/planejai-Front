@@ -1,26 +1,54 @@
-import seta from "../../assets/icons/optionsIcon.png"
-import { InputDate } from "../input/InputDate"
+import { useState } from "react";
+import options from "../../assets/icons/optionsIcon.png"
+import optionsSelected from "../../assets/icons/optionsSelected.png"
 
-function ModalBody(props: any) {
-
-    return (
-        <div className='h-screen w-screen flex justify-center items-center fixed top-0 left-0  bg-[black] bg-opacity-20' style={{ zIndex: 4 }}>
-
-            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-5 outline-none focus:outline-none">
-                <div className="relative h-[100%] pt-16">
-                    {/*content*/}
-                    <div className="w-85 h-100 overflow-y-scroll border-0 rounded-lg shadow-lg relative flex flex-col bg-[var(--color-gray-150)] outline-none focus:outline-none ps-3" style={{ zIndex: 400 }}>
-                        {/*header*/}
-                            <button  onClick={() => props.closeModal(false)}>
-                                <img src={seta} className=" absolute h-10 w-10 mt-2" />
-                            </button>
-                        {props.children}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    )
+interface IModalMessageProps {
+    onClose: () => void;
+    value: string;
 }
 
-export default ModalBody
+export const ModalMessage = ({onClose, value}: IModalMessageProps) => {
+
+    return (
+            <div className="absolute inset-0
+                bg-black/30
+                z-2
+                ">
+                
+                <div className=" 
+                absolute top-1/2 left-1/2
+                -translate-x-1/2 -translate-y-1/2
+                w-[300px]
+                h-[150px]
+                rounded-2xl
+                bg-[var(--color-gray-150)]
+                shadow-xl
+                z-50
+                ">
+                    <p className="font-bold
+                    text-[20px]
+                    text-center
+                    p-10 ">
+                        {value}
+                    </p>
+
+                    <button
+                            type="button"
+                            onClick={onClose}
+                            className="absolute top-2 right-2"
+                            >
+
+                            <img
+                                src={options}
+                                alt="close modal"
+                                className="size-8 cursor-pointer"
+                            />
+
+                        </button>
+
+                </div>
+
+            </div>
+            
+    )
+}

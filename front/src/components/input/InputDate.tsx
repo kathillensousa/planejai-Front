@@ -12,7 +12,7 @@ interface IInputDateProps {
 
 export const InputDate = ({
     selectedDate,
-    setSelectedDate
+    setSelectedDate,
 }: IInputDateProps) => {
 
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -25,6 +25,25 @@ export const InputDate = ({
     years.push(year);
 }
 
+// funçao para calcular a idade do usuário
+    function calculateAge(birthDate: Date) {
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    const monthDifference =
+        today.getMonth() - birthDate.getMonth();
+
+    if (
+        monthDifference < 0 ||
+        (monthDifference === 0 &&
+            today.getDate() < birthDate.getDate())
+    ) {
+        age--;
+    }
+
+    return age;
+}
     function getDaysInMonth(date: Date) {
 
     const year = date.getFullYear();
@@ -88,7 +107,7 @@ export const InputDate = ({
     };
 
     return (
-    <div className="w-[300px] h-[350px] p-4 rounded-2xl bg-[var(--color-gray-200)] shadow-xl">
+    <div className="w-[300px] h-[350px] p-4 rounded-2xl bg-[var(--color-gray-200)] shadow-xl  border border-2">
     
       {/* HEADER */}
         <div className="flex justify-between items-center mb-2">

@@ -9,7 +9,7 @@ import ZupSentado from "../../assets/ZUP/ZupSentado.png"
 import azulVerde from "../../assets/background-icons/azulVerde.png"
 import azulVerdeBaixo from "../../assets/background-icons/azulVerdeBaixo.png"
 import logo from "../../assets/Logo_planejAI.png";
-import { ModalErrorLogin } from "../../components/modal/ModalErrorLogin"
+import { ModalMessage } from "../../components/modal/ModalBody"
 
 export const LoginPage = () => {
 
@@ -24,11 +24,11 @@ export const LoginPage = () => {
 
     const navigate = useNavigate();
 
-    const [showErrorModal, setShowErrorModal] = useState(false);
+    const [showModalMessage, setShowModalMessage] = useState(false);
 
     const handleLogin = async () => {
         if(!email || !password){
-            setShowErrorModal(true)
+            setShowModalMessage(true)
             return;
         };
 
@@ -38,7 +38,7 @@ export const LoginPage = () => {
 
         if (error) {
             console.error(error);
-            setShowErrorModal(true);
+            setShowModalMessage(true);
             return error;
         }   
         //navigate('/home') // força a navegação antes do estado global atualizar, faaz retornar o acesso do usuario como false, e o private route roda com o valor antigo
@@ -123,9 +123,10 @@ export const LoginPage = () => {
                 </div>
 
             </div>
-            {showErrorModal && (
-            <ModalErrorLogin
-            onClose={() => setShowErrorModal(false)} />
+            {showModalMessage && (
+            <ModalMessage
+            onClose={() => setShowModalMessage(false)}
+            value="E-mail ou senha incorretos, tente novamente!" />
             )}
 
         </div>
