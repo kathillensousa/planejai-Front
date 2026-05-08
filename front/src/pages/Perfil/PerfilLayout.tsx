@@ -9,7 +9,7 @@ export const PerfilUser = () => {
     const handleLogOut = async () => {
         const leave = window.confirm("Você deseja sair da sua conta?")
         if (leave) {
-            logOut()
+            await logOut()
             navigate('/login')
         } else {
             return;

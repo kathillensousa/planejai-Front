@@ -11,7 +11,7 @@
 
   --color-success-500: #2C7857;
   --color-success-450: #6ff7bcd8;
-  --color-success-430: #9EEA9E;
+  --color-success-420: #59CD53;
   --color-success-400: #236249;
   --color-success-300: #1C4C39;
 
@@ -32,16 +32,21 @@
   --color-black-300: #595959;
   --color-black-200: #989696;
   --color-black-110: #c8c4c486;
+  --color-black-1: #000000;
 
+  --color-gray-300: #464646;
+  --color-gray-200: #AEADAD;
+  --color-gray-150: #E4E0E0;
   --color-gray-100: #d1d1d1;
+  --color-gray-20: #aeadad6e;
 
 
   --color-transparent-500: none;
   --color-transparent-400: #F5F5F5;
-  --color-transparent-300: #E3E3E3;
+  --color-transparent-300: #E3E3E3;    
+  
 
-
-  --font-sans: "Montserrat", sans-serif;
+  --font-Inter: Inter;
 
   --breakpoint-xs: 480px;
   --breakpoint-sm: 640px;

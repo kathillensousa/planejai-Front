@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes} from "react-router-dom";
 import { LoginPage } from "./pages/Login/Login";
 
 //rotas privadas
-import { PrivateRoute } from "./components/Authentication/PrivatesRoutes";
+import { PrivateRoute } from "./Authentication/PrivatesRoutes";
 import { PlanejAI } from "./pages/PlanejAI/PlanejAI";
 import { CapitalLayout } from "./pages/Capital/CapitalLayout"
 import { GastosLayout } from "./pages/Gastos/GastosLayout"
@@ -12,6 +12,7 @@ import { PerfilUser } from "./pages/Perfil/PerfilLayout";
 import { HomePage } from "./pages/Home/Home";
 import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
 import { LoaderScreen } from "./pages/LoaderScreen";
+import { CreateAccount } from "./pages/Register/RegistrationForm";
 
 function App () {
 
@@ -31,6 +32,11 @@ function App () {
                 element={
                     <LoginPage />
                 }
+                />
+
+                <Route
+                path="/createaccount"
+                element={<CreateAccount/>}
                 />
 
                 
