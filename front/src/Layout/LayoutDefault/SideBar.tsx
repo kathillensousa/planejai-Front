@@ -9,32 +9,31 @@ import dividasIcon from "../../assets/icons/dividasIcon.svg";
 import visaoGeralIcon from "../../assets/icons/visaoGeralIcon.svg";
 import perfilUser from "../../assets/icons/perfilUser.svg";
 
+interface ISideBarProps {
+    onClose: () => void;
+}
 
-export const SideBar = ({children}: PropsWithChildren) => {
+export const SideBar = ({onClose}: ISideBarProps) => {
 
     return (
-        <div className="flex flex-col gap-2">
-            <aside className="w-16 h-screen border-r border-black-500  bg-[var(--color-black-110)]">
+        <div className="absolute inset-0
+                bg-black/50
+                z-2
+                h-screen
+                flex
+                items-center
+                ">
+
+        
+            <div className="w-16 h-110 bottom-10 rounded-r-2xl   bg-[var(--color-gray-150)]">
                 <ul>
-                    <li>
-                        <NavLink  
-                        to='/planejai'
-                        className="group flex items-center gap-2 "
-                        > 
-                            <img src="/logo_planejAI.png" 
-                            alt="icon"
-                            className="size-30 flex items-center mt-10 py-8  transition transform hover:scale-110"/>
-                            <span className="opacity-0 group-hover:opacity-100 shadow-xs font-sans text-white  whitespace-nowrap transition text-xs p-2 m-5 bg-[var(--color-black-400)]">
-                                Saiba mais sobre o PlanejAI</span>
-                        </NavLink>
-                    </li>
                     <li>
                         <NavLink 
                             to='/perfil'
-                            className="group flex items-center gap-2 "
+                            className="group flex items-center pb-0"
                             >
                                 <img src={perfilUser} alt="icon"
-                                className="size-30 flex items-center gap-2 p-2  transition transform hover:scale-110"/>
+                                className="size-15 flex p-2  mt-15 transition transform hover:scale-110"/>
                                 <span className="opacity-0 group-hover:opacity-100 shadow-xs font-sans text-white whitespace-nowrap  transition text-xs p-2 m-5 bg-[var(--color-black-400)]">
                                     Perfil de usuário
                                 </span>
@@ -46,7 +45,7 @@ export const SideBar = ({children}: PropsWithChildren) => {
                             className="group flex items-center gap-2 "
                             >
                                 <img src={visaoGeralIcon} alt="icon"
-                                className="size-30 flex items-center gap-2 p-2 py-8 transition transform hover:scale-110"/>
+                                className="size-15 flex items-center gap-2 mt-4 p-2  transition transform hover:scale-110"/>
                                 <span className="opacity-0 group-hover:opacity-100 shadow-xs font-sans text-white whitespace-nowrap transition text-xs p-2 m-5 bg-[var(--color-black-400)]">
                                     Home - Visão geral de suas finanças</span>
                         </NavLink>
@@ -58,7 +57,7 @@ export const SideBar = ({children}: PropsWithChildren) => {
                             className="group flex items-center gap-2 "
                             >
                                 <img src={transacoesIcon}alt="icon"
-                                className="size-30 flex items-center gap-2 p-2 py-8  transition transform hover:scale-110"/>
+                                className="size-15 flex items-center gap-2 mt-4 p-2   transition transform hover:scale-110"/>
                                 <span className="opacity-0 group-hover:opacity-100 shadow-xs font-sans  text-white whitespace-nowrap transition text-xs p-2 m-5 bg-[var(--color-black-400)] ">
                                     Controle de Capital</span>
                         </NavLink>
@@ -70,7 +69,7 @@ export const SideBar = ({children}: PropsWithChildren) => {
                             className="group flex items-center gap-2 "
                             >
                                 <img src={gastosIcon} alt="icon"
-                                className="size-30 flex items-center gap-2 p-2 py-8 transition transform hover:scale-110"/>
+                                className="size-15 flex items-center gap-2 mt-4 p-2  transition transform hover:scale-110"/>
                                 <span className="opacity-0 group-hover:opacity-100 shadow-xs font-sans text-white whitespace-nowrap transition text-xs p-2 m-5 bg-[var(--color-black-400)]">
                                     Controle de Gastos</span>
                         </NavLink>
@@ -81,13 +80,14 @@ export const SideBar = ({children}: PropsWithChildren) => {
                             className="group flex items-center gap-2 "
                             >
                                 <img src={dividasIcon} alt="icon"
-                                className="size-30 flex items-center gap-2 p-2 py-8 transition transform hover:scale-110"/>
+                                className="size-15 flex items-center gap-2 mt-4 p-2  transition transform hover:scale-110"/>
                                 <span className="opacity-0 group-hover:opacity-100 shadow-xs font-sans text-white whitespace-nowrap transition text-xs p-2 m-5 bg-[var(--color-black-400)]">
                                     Controle de Dividas</span>
                         </NavLink>
                     </li>
                 </ul>
-            </aside>
+            </div>
+        
         </div>
     )
 }

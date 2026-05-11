@@ -40,6 +40,7 @@ function App () {
                 />
 
                 
+                
                 <Route element={<PrivateRoute/>}> 
                 <Route element={<LayoutDefault />}>
                     <Route 
