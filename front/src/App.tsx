@@ -13,6 +13,8 @@ import { HomePage } from "./pages/Home/Home";
 import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
 import { LoaderScreen } from "./pages/LoaderScreen";
 import { CreateAccount } from "./pages/Register/RegistrationForm";
+import { PlanejeAquiLayout } from "./pages/PlanejeAqui/PlanejeAqui";
+import { ConfigLayout } from "./pages/Config/Config";
 
 function App () {
 
@@ -91,7 +93,21 @@ function App () {
                         handle={{title:"Controle de Divídas"}}
                     />
 
-                    
+                    <Route 
+                        path="/planejeaqui"
+                        element={
+                            <PlanejeAquiLayout/>
+                        }
+                        handle={{title:"Planeje aqui"}}
+                    /> 
+
+                    <Route 
+                        path="/config"
+                        element={
+                            <ConfigLayout/>
+                        }
+                        handle={{title:"Configurações"}}
+                    />
                 </Route>
                 </Route>
                 

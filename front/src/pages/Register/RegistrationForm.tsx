@@ -198,7 +198,6 @@ export const CreateAccount = () => {
                                 transition-all duration-450 size-10
                                 ${showModal ? "-translate-y-16 z-22  top-15 " :" z-10"}
                                 `}
-                                
                                 >
                                 <img
                                     src={showModal ? optionsSelected : options }

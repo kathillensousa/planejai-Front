@@ -39,15 +39,24 @@ export const HeaderLayout = ({children, title}: IHeaderLayoutProps) => {
             <button
             type="button"
             onClick={() => setShowSideBar(!showSideBar)}
-            className={`absolute top-8 left-0 -translate-y-1/3 
-                                transition-all duration-450 size-10
-                                ${showSideBar ? "-translate-y- z-22 top-35":" z-22"}
-                                `}>
+            className="group absolute top-8 left-0 -translate-y-1/3 transition-all duration-450 size-10"
+            >
                 <img src={Menu} alt="icon"
                 className="absolute w-7 left-5 bottom-4 cursor-pointer"
                 />
+                <span className="
+                absolute left-14 bottom-3
+                opacity-0 group-hover:opacity-90
+                transition-opacity duration-300
+                shadow-xs font-sans text-white whitespace-nowrap
+                text-xs p-2 
+                bg-[var(--color-black-400)]
+                ">
+                    Menu de controles 
+                </span>
 
             </button>
+
             <header >
                 {title && (
                     <h1 className="absolute text-md font-bold p-2 border-2 rounded-md border-[var(--color-black-20)] bg-[var(--color-gray-20)] top-18 left-3">
