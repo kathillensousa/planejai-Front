@@ -19,10 +19,7 @@ export const ButtonMes = () => {
             <h1 className="text-[14px]  -mt-1 font-bold [text-shadow:2px_2px_6px_rgba(0,0,0,0.3)]"> {meses[mes]}</h1>
             <button onClick={() => setAbertoMes(!abertoMes)}>
                     <img src={option} alt="icon"
-                    className={`absolute size-8  left-31 top-4 transition transform hover:scale-110  -translate-y-1/3 
-                                transition-all duration-450 
-                                ${abertoMes ? "-translate-y-16 z-22  top-17 " :" z-10"}
-                                `}/>
+                    className={`absolute size-8  left-31 top-4 transition transform hover:scale-110  -translate-y-1/3 transition-all duration-450 ${abertoMes ? "-translate-y-16 z-22  top-17 " :" z-10"}`}/>
             </button>
 
             {abertoMes && (

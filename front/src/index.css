@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 :root {
+
+  body {
+    background: var(--color-gray-180);
+  }
   --color-primary-500: #CC4733;
   --color-primary-400: #A83A2A;
   --color-primary-300: #862F22;
@@ -17,10 +21,12 @@
 
   --color-warning-500: #E3B73A;
   --color-warning-400: #D6A816;
+  --color-warning-350: #CDC953;
   --color-warning-300: #AD8711;
 
   --color-danger-500: #D8323D;
   --color-danger-400: #A83A2A;
+  --color-danger-350: #E25858;
   --color-danger-300: #862F22;
 
   --color-white-500: #FFF;
