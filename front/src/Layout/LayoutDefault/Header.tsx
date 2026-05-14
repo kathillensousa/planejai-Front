@@ -3,7 +3,6 @@ import { SideBar } from "./SideBar";
 import { NavLink } from "react-router-dom";
 
 import Menu from "../../assets/icons/menusIcon.webp";
-import back from "../../assets/icons/optionsIcon.png";
 import Logo from "../../assets/logo_planejAI.png"
 import moldura from "../../assets/ZUP/moldura-perfil.png"
 import perfil from "../../assets/icons/perfilUser.svg"
@@ -59,7 +58,7 @@ export const HeaderLayout = ({children, title}: IHeaderLayoutProps) => {
 
             <header >
                 {title && (
-                    <h1 className="absolute text-md font-bold p-2 border-2 rounded-md border-[var(--color-black-20)] bg-[var(--color-gray-20)] top-18 left-3">
+                    <h1 className="absolute text-md font-bold p-2 border-l-2  border-[var(--color-black-20)]  top-18 left-3 [text-shadow:2px_2px_6px_rgba(0,0,0,0.3)]">
                         {title}
                     </h1>
                     )}

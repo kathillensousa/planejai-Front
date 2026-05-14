@@ -114,7 +114,7 @@ export const InputDate = ({
             
             <button onClick={handleNextMonth}>
             
-            <img src={seta} className="absolute z-20 right-5 top-0 pt-1" />
+            <img src={seta} className="absolute z-20 right-8 top-0 pt-1 cursor-pointer" />
 
             </button>
                 <h2 className="font-bold absolute z-20 left-23 top-0 pt-4 ">{monthLabel}</h2>
@@ -123,8 +123,9 @@ export const InputDate = ({
                 value={currentDate.getFullYear()}
                 onChange={(e) => handleYearChange(e.target.value)}
                 className="
-                    z-20 left-30  ml-15 pl-10
-                    font-bold
+                    w-auto
+                    z-20 left-30  ml-15 pl-8
+                    font-bold cursor-pointer
                 "
             >
                 
@@ -137,7 +138,7 @@ export const InputDate = ({
             
             <button onClick={handlePrevMonth}>
 
-            <img src={setaBack} className="absolute z-20 left-5 top-0 pt-1"  />
+            <img src={setaBack} className="absolute z-20 left-10 top-0 pt-1 cursor-pointer"  />
 
             </button>
         </div>

@@ -51,7 +51,7 @@ export const LoginPage = () => {
     }, [accessToken])
 
     return (
-        <div>
+        <div className="min-h-screen overflow-visible">
             <img src={azulVerde} alt="bgIcon" className="absolute z-0 top-0 left-0  size-35"/>
             <img src={azulVerdeBaixo} alt="bgIcon" className="absolute z-0 bottom-0 right-0 size-35"/>
 

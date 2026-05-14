@@ -17,8 +17,12 @@ export const PerfilUser = () => {
         
     };
     return (
-        <div>
-            perfil
+        <div className="min-h-screen overflow-visible">
+            
+
+            <div>
+                
+            </div>
             <button className="w-35 h-10 font-black bg-[var(--color-success-450)] ml-10 border border-2 rounded-md shadow-2xl" 
                 onClick={handleLogOut}> 
                     Sair da conta

@@ -3,7 +3,7 @@
 :root {
 
   body {
-    background: var(--color-gray-180);
+    background: var(--color-gray-200);
   }
   --color-primary-500: #CC4733;
   --color-primary-400: #A83A2A;
@@ -21,7 +21,7 @@
 
   --color-warning-500: #E3B73A;
   --color-warning-400: #D6A816;
-  --color-warning-350: #CDC953;
+  --color-warning-350: #ebe308;
   --color-warning-300: #AD8711;
 
   --color-danger-500: #D8323D;

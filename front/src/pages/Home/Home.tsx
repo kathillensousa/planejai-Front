@@ -1,4 +1,4 @@
-import { NavLink} from 'react-router-dom';
+
 import ZupEscondido from "../../assets/ZUP/zup-escondido.png"
 import { ButtonMes } from '../../components/Buttons/ButtonMes';
 import { TansitionsBlock } from '../../components/SummaryBlocks/Transations';
@@ -42,21 +42,17 @@ export const HomePage = () => {
             </div>
 
         <div className="relative">
-            <ButtonMes />
+            <ButtonMes top='top-4' />
         </div>
         <div>
             <TansitionsBlock title="Capital" 
             bgColor="bg-[var(--color-success-420)]"
             borderColor="border-[var(--color-success-420)]"
-            bgDate="bg-[var(--color-success-420)]"
-            bgValor="bg-[var(--color-success-420)]"
             bgConta={contaColors["Caixa Tem"]}/>
 
             <TansitionsBlock title="Gastos"
             bgColor="bg-[var(--color-warning-350)]"
             borderColor="border-[var(--color-warning-350)]"
-            bgDate="bg-[var(--color-warning-350)]"
-            bgValor="bg-[var(--color-danger-350)]"
             bgConta={contaColors["Banco do Brasil"]} />
 
             <TansitionsBlock title="Dividas"
@@ -64,7 +60,6 @@ export const HomePage = () => {
             borderColor="border-[var(--color-danger-350)]"
             dateLabel="Vencimento:"
             bgDate="bg-[var(--color-danger-350)] ml-8"
-            bgValor="bg-[var(--color-danger-350)]"
             bgConta={contaColors["Nubank"]}
             />
         </div>

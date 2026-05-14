@@ -45,13 +45,13 @@ export const LayoutDefault = () => {
 
 
     return (
-        <div className="relative min-h-screen w-full bg-[var(--color-gray-180)]">
+        <div className="relative min-h-screen w-full bg-[var(--color-gray-200)]">
     
             <img
             src={topIcons[location.pathname]}
             alt="bgIcon"
             className="absolute top-15 left-0 z-0 size-35"
-        /   >
+            />
     
             <div className="relative z-10 flex flex-col MIN-h-screen">
 
@@ -62,7 +62,7 @@ export const LayoutDefault = () => {
                 <Outlet />
             </main>
 
-            <div className="flex justify-end">
+            <div className="flex justify-end z-0">
                 <img
                     src={bottomIcons[location.pathname]}
                     alt="bgIcon"

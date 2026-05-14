@@ -44,7 +44,7 @@ export const ModalMessageSucces = ({onClose, value}: IModalMessageSuccesProps) =
                                 className="size-8 cursor-pointer"
                             />
 
-                        </button>
+                    </button>
 
                 </div>
 
