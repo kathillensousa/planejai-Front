@@ -14,6 +14,7 @@ import optionsSelected from "../../assets/icons/optionsSelected.png"
 
 interface ISideBarProps {
     onClose: () => void;
+    
 }
 
 export const SideBar = ({onClose}: ISideBarProps) => {
@@ -24,9 +25,9 @@ export const SideBar = ({onClose}: ISideBarProps) => {
         <div className="absolute inset-0
                 bg-black/50
                 z-2
-                h-screen
                 flex
                 items-center
+                min-h-screen overflow-visible
                 ">
 
         

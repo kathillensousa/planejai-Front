@@ -24,144 +24,54 @@ export const LayoutDefault = () => {
         titles[location.pathname] || null
         // caso a rota nao exista ou nao tenha titulo, será exibido o titulo da pág inicial
     
-    const icons: Record<string, React.ReactNode> = {
-        "/home": (
-            <>
-                <img
-                    src={azulVerde}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={azulVerdeBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
-    
-        "/planejai": (
-            <>
-                <img
-                    src={azulVerde}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={azulVerdeBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
-    
-        "/perfil": (
-            <>
-                <img
-                    src={azulVerde}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={azulVerdeBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
-        
-        "/capital": (
-            <>
-                <img
-                    src={amareloVerde}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={amareloVerdeBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
-
-        "/gastos": (
-            <>
-                <img
-                    src={amareloVermelho}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={amareloVermelhoBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
-
-        "/dividas": (
-            <>
-                <img
-                    src={amareloVermelho}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={amareloVermelhoBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
-
-        "/planejeaqui": (
-            <>
-                <img
-                    src={azulVerde}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={azulVerdeBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
-
-        "/config": (
-            <>
-                <img
-                    src={azulVerde}
-                    alt="bgIcon"
-                    className="absolute z-0 top-15 left-0 size-35"
-                />
-                <img
-                    src={azulVerdeBaixo}
-                    alt="bgIcon"
-                    className="absolute z-0 bottom-0 right-0 size-35"
-                />
-            </>
-        ),
+    const topIcons: Record<string, string> = {
+        "/home": azulVerde,
+        "/planejai": azulVerde,
+        "/perfil": azulVerde,
+        "/capital": amareloVerde,
+        "/gastos": amareloVermelho,
+        "/dividas": amareloVermelho,
     };
 
-    const icon = icons[location.pathname] || null
-  
+    const bottomIcons: Record<string, string> = {
+        "/home": azulVerdeBaixo,
+        "/planejai": azulVerdeBaixo,
+        "/perfil": azulVerdeBaixo,
+        "/capital": amareloVerdeBaixo,
+        "/gastos": amareloVermelhoBaixo,
+        "/dividas": amareloVermelhoBaixo,
+    }
+
+
 
     return (
-        <div className="flex h-screen absolute w-full z-0 bg-[var(--color-gray-180)]">
+        <div className="relative min-h-screen w-full bg-[var(--color-gray-200)]">
     
-        {icon}
+            <img
+            src={topIcons[location.pathname]}
+            alt="bgIcon"
+            className="absolute top-15 left-0 z-0 size-35"
+            />
     
-            <div className="flex-1 flex flex-col ">
+            <div className="relative z-10 flex flex-col MIN-h-screen">
+
                 <HeaderLayout title={title}  />
-    
-            <main className="flex-1 p-4 ">
+                
+
+            <main className=" flex-1 p-4">
                 <Outlet />
             </main>
+
+            <div className="flex justify-end z-0">
+                <img
+                    src={bottomIcons[location.pathname]}
+                    alt="bgIcon"
+                    className="size-35"
+                />
+            </div>
+
         </div>
-    
-        </div>
+            
+    </div>
     )
 }
