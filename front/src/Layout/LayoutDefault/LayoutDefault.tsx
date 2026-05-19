@@ -1,6 +1,12 @@
 import { Outlet, useLocation } from "react-router-dom"
-import { SideBar } from "./SideBar"
 import { HeaderLayout } from "./Header"
+
+import azulVerde from "../../assets/background-icons/azulVerde.png"
+import azulVerdeBaixo from "../../assets/background-icons/azulVerdeBaixo.png"
+import amareloVerde from "../../assets/background-icons/amarelo-verde.png"
+import amareloVerdeBaixo from "../../assets/background-icons/amarelo-verdeBaixo.png"
+import amareloVermelho from "../../assets/background-icons/amarelo-vermelho.png"
+import amareloVermelhoBaixo from "../../assets/background-icons/amarelo-vermelhoBaixo.png"
 
 export const LayoutDefault = () => {
     const location = useLocation()  // para pegar a rota atual
@@ -15,22 +21,57 @@ export const LayoutDefault = () => {
     }
   
     const title =
-        titles[location.pathname] ||
-        "PlanejAI - seu facilitador de controle financeiro"  // caso a rota nao exista ou nao tenha titulo, será exibido o titulo da pág inicial
-  
+        titles[location.pathname] || null
+        // caso a rota nao exista ou nao tenha titulo, será exibido o titulo da pág inicial
+    
+    const topIcons: Record<string, string> = {
+        "/home": azulVerde,
+        "/planejai": azulVerde,
+        "/perfil": azulVerde,
+        "/capital": amareloVerde,
+        "/gastos": amareloVermelho,
+        "/dividas": amareloVermelho,
+    };
+
+    const bottomIcons: Record<string, string> = {
+        "/home": azulVerdeBaixo,
+        "/planejai": azulVerdeBaixo,
+        "/perfil": azulVerdeBaixo,
+        "/capital": amareloVerdeBaixo,
+        "/gastos": amareloVermelhoBaixo,
+        "/dividas": amareloVermelhoBaixo,
+    }
+
+
+
     return (
-        <div className="flex h-screen">
+        <div className="relative min-h-screen w-full bg-[var(--color-gray-200)]">
     
-            <SideBar />
+            <img
+            src={topIcons[location.pathname]}
+            alt="bgIcon"
+            className="absolute top-15 left-0 z-0 size-35"
+            />
     
-            <div className="flex-1 flex flex-col">
-                <HeaderLayout title={title} />
-    
-            <main className="flex-1 p-4">
+            <div className="relative z-10 flex flex-col MIN-h-screen">
+
+                <HeaderLayout title={title}  />
+                
+
+            <main className=" flex-1 p-4">
                 <Outlet />
             </main>
+
+            <div className="flex justify-end z-0">
+                <img
+                    src={bottomIcons[location.pathname]}
+                    alt="bgIcon"
+                    className="size-35"
+                />
+            </div>
+
         </div>
-    
-        </div>
+            
+    </div>
     )
 }

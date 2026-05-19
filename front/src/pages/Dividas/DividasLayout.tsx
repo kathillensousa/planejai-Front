@@ -1,7 +1,7 @@
 
 export const DividasLayout = () => {
     return (
-        <div>
+        <div className="min-h-screen overflow-visible">
             Dividas
         </div>
     )

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 :root {
+
+  body {
+    background: var(--color-gray-200);
+  }
   --color-primary-500: #CC4733;
   --color-primary-400: #A83A2A;
   --color-primary-300: #862F22;
@@ -10,35 +14,69 @@
   --color-secondary-300: #203F77;
 
   --color-success-500: #2C7857;
-  --color-success-450: #6ff7bcb2;
+  --color-success-450: #6ff7bcd8;
+  --color-success-420: #59CD53;
   --color-success-400: #236249;
   --color-success-300: #1C4C39;
 
   --color-warning-500: #E3B73A;
   --color-warning-400: #D6A816;
+  --color-warning-350: #ebe308;
   --color-warning-300: #AD8711;
 
   --color-danger-500: #D8323D;
   --color-danger-400: #A83A2A;
+  --color-danger-350: #E25858;
   --color-danger-300: #862F22;
 
   --color-white-500: #FFF;
   --color-white-400: #F5F5F5;
   --color-white-300: #E3E3E3;
+  --color-white-250: #E4E0E0;
 
   --color-black-500: #262626;
   --color-black-400: #3F3F3F;
   --color-black-300: #595959;
   --color-black-200: #989696;
   --color-black-110: #c8c4c486;
+  --color-black-1: #000000;
+
+  --color-gray-300: #464646;
+  --color-gray-200: #AEADAD;
+  --color-gray-180: #D9D9D9;
+  --color-gray-150: #E4E0E0;
+  --color-gray-100: #d1d1d1;
+  --color-gray-20: #ccccccdc;
 
 
   --color-transparent-500: none;
   --color-transparent-400: #F5F5F5;
-  --color-transparent-300: #E3E3E3;
+  --color-transparent-300: #E3E3E3;   
 
+  /* Nubank */
+    --color-bank-purple: #8A05BE;
 
-  --font-sans: "Montserrat", sans-serif;
+    /* Itaú / Inter */
+    --color-bank-orange: #FF7A00;
+
+    /* Caixa / Mercado Pago */
+    --color-bank-blue: #009EE3;
+
+    /* PicPay */
+    --color-bank-green: #21C25E;
+
+    /* Santander / Bradesco */
+    --color-bank-red: #E30613;
+
+    /* C6 Bank */
+    --color-bank-gray: #2B2B2B;
+
+    /* Banco do Brasil */
+    --color-bank-yellow: #FFD600;
+
+  
+
+  --font-Inter: Inter;
 
   --breakpoint-xs: 480px;
   --breakpoint-sm: 640px;

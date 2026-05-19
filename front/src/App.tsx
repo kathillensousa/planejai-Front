@@ -1,6 +1,9 @@
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 
+import { LoginPage } from "./pages/Login/Login";
 
+//rotas privadas
+import { PrivateRoute } from "./Authentication/PrivatesRoutes";
 import { PlanejAI } from "./pages/PlanejAI/PlanejAI";
 import { CapitalLayout } from "./pages/Capital/CapitalLayout"
 import { GastosLayout } from "./pages/Gastos/GastosLayout"
@@ -8,22 +11,42 @@ import { DividasLayout } from "./pages/Dividas/DividasLayout";
 import { PerfilUser } from "./pages/Perfil/PerfilLayout";
 import { HomePage } from "./pages/Home/Home";
 import { LayoutDefault } from "./Layout/LayoutDefault/LayoutDefault";
-import { LoginPage } from "./pages/Login/Login";
+import { LoaderScreen } from "./pages/LoaderScreen";
+import { CreateAccount } from "./pages/Register/RegistrationForm";
+import { PlanejeAquiLayout } from "./pages/PlanejeAqui/PlanejeAqui";
+import { ConfigLayout } from "./pages/Config/Config";
 
 function App () {
 
     return (
             <BrowserRouter>
             <Routes>
+
+                <Route 
+                path="*"
+                element={
+                    <LoaderScreen/>
+                }
+                />
+
                 <Route 
                 path="/login"
                 element={
                     <LoginPage />
                 }
                 />
+
+                <Route
+                path="/createaccount"
+                element={<CreateAccount/>}
+                />
+
+                
+                
+                <Route element={<PrivateRoute/>}> 
                 <Route element={<LayoutDefault />}>
                     <Route 
-                        path="/"
+                        path="/home"
                         element={
                             <HomePage/>
                             }
@@ -71,13 +94,24 @@ function App () {
                     />
 
                     <Route 
-                        path="*"
+                        path="/planejeaqui"
                         element={
-                            <HomePage />
+                            <PlanejeAquiLayout/>
                         }
-                        handle={{title:"Página inicial - Visão Geral das finanças "}}
+                        handle={{title:"Planeje aqui"}}
+                    /> 
+
+                    <Route 
+                        path="/config"
+                        element={
+                            <ConfigLayout/>
+                        }
+                        handle={{title:"Configurações"}}
                     />
                 </Route>
+                </Route>
+                
+                
             </Routes>
         </BrowserRouter>
         
