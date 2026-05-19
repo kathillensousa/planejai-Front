@@ -1,22 +1,24 @@
 import { ButtonMes } from "../../components/Buttons/ButtonMes"
 import { CardCapital } from "../../components/Cards/CardsCapital/CardCapital"
 import {AddTransation} from "../../components/modal/AddTransation"
+import type { IAccount } from "../../Interfaces/IAccount";
 
 import Add from "../../assets/icons/AddTransation.png";
 import filter from "../../assets/icons/filterIcon.webp"
 import trash from "../../assets/icons/trashIcon.webp"
 import option from "../../assets/icons/optionsIcon.png"
+import optionsSelected from "../../assets/icons/optionsSelected.png";
 
 import { useState } from "react";
 import { InputDate } from "../../components/input/InputDate";
 
 export const CapitalLayout = () => {
 
+    const [accounts, setAccounts] = useState<IAccount[]>([]);
+
     const [showAdd, setShowAdd] = useState(false);
 
     const [dataTrans, setDataTrans] = useState<Date | null>(null);
-
-    const [account, setAccount] = useState("");
 
     const [value, setValue] = useState("");
 
@@ -28,13 +30,6 @@ export const CapitalLayout = () => {
         "Caixa Tem": "border-blue-500",
     };
 
-    const accounts = [
-        "Nubank",
-        "Banco do Brasil",
-        "Caixa Tem",
-    ] 
-        
-    
     return (
         <div className="min-h-screen overflow-visible">
             
@@ -48,20 +43,11 @@ export const CapitalLayout = () => {
                 />
                 </button>
                 {showAdd && (
-                    <div className="absolute flex justify-center items-center min-h-screen">
+                    <div className="absolute flex justify-center items-center w-screen top-50 z-40">
                         {/*Passando as props para o calendário*/}
                         <AddTransation
-                        data={setDataTrans}
-                        value={setValue}
-                        account={setAccount}
-                        payment={setPayment}
+                        onClose={() => setShowAdd(false)}
                     />
-                    
-                    <button>
-                        <img src={option} alt="icon"  onClick={() => setShowAdd(!showAdd)}
-                            className="absolute size-10 top-3 z-10 "
-                        />
-                    </button>
                     
                     </div>
                 )}

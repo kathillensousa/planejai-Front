@@ -188,7 +188,7 @@ export const CreateAccount = () => {
                             placeholder="Selecione.."
                             type="text"
                             value={formattedDate}
-                            
+                            readOnly
                             />
 
                             <button

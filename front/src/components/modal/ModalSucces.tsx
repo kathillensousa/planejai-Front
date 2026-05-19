@@ -10,20 +10,19 @@ interface IModalMessageSuccesProps {
 export const ModalMessageSucces = ({onClose, value}: IModalMessageSuccesProps) => {
 
     return (
-            <div className="absolute inset-0
-                bg-black/30
-                z-2
+            <div className="fixed inset-0
+            bg-black/30
+            z-40
+            flex items-center justify-center
                 ">
                 
                 <div className=" 
-                absolute top-1/2 left-1/2
-                -translate-x-1/2 -translate-y-1/2
                 w-[300px]
                 h-[150px]
                 rounded-2xl
                 bg-[var(--color-gray-150)]
                 shadow-xl
-                z-50
+                relative
                 ">
                     <p className="font-bold
                     text-[20px]
