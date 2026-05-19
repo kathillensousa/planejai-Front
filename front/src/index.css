@@ -32,6 +32,7 @@
   --color-white-500: #FFF;
   --color-white-400: #F5F5F5;
   --color-white-300: #E3E3E3;
+  --color-white-250: #E4E0E0;
 
   --color-black-500: #262626;
   --color-black-400: #3F3F3F;
@@ -50,7 +51,29 @@
 
   --color-transparent-500: none;
   --color-transparent-400: #F5F5F5;
-  --color-transparent-300: #E3E3E3;    
+  --color-transparent-300: #E3E3E3;   
+
+  /* Nubank */
+    --color-bank-purple: #8A05BE;
+
+    /* Itaú / Inter */
+    --color-bank-orange: #FF7A00;
+
+    /* Caixa / Mercado Pago */
+    --color-bank-blue: #009EE3;
+
+    /* PicPay */
+    --color-bank-green: #21C25E;
+
+    /* Santander / Bradesco */
+    --color-bank-red: #E30613;
+
+    /* C6 Bank */
+    --color-bank-gray: #2B2B2B;
+
+    /* Banco do Brasil */
+    --color-bank-yellow: #FFD600;
+
   
 
   --font-Inter: Inter;
